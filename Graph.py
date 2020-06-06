@@ -37,8 +37,11 @@ class Graphic_computation:
             print('面积:',self.s)
             return self.s
         try:
-            circumference()
-            area()
+            def main():
+                area()
+                circumference()
+                return 'successful'
+            return main()
         except TypeError:
             print('请在实例对象的时候，输入你的长和宽!')
             return 'TypeError'
@@ -52,7 +55,10 @@ class Graphic_computation:
             print('面积：',self.s)
             return self.s
         try:
-            area()
+            def main():
+                area()
+                return 'successful'
+            return main()
         except TypeError:
             print('请在实例对象的时候，输入你的长和高!')
             return 'TypeError'
@@ -67,7 +73,10 @@ class Graphic_computation:
             return self.s
         self.area=area()
         try:
-            area()
+            def main():
+                area()
+                return 'successful'
+            return main()
         except TypeError:
             print('请在实例对象的时候，输入你的长和高')
             return 'TypeError'
@@ -102,9 +111,11 @@ class Graphic_computation:
                 print('体积分数形式:',self.Fraction(self.v))
             return self.v
         try:
-            self.surface=area()
-            self.volume=volume()
-            return 'successful'
+            def main():
+                area()
+                volume()
+                return 'successful'
+            return main()
         except TypeError:
             return 'TypeError'
     def Cylinder(self,fraction=False,mian=2):
@@ -135,9 +146,11 @@ class Graphic_computation:
                 print('表面积分数形式:', self.Fraction(self.s))
             return self.s
         try:
-            self.volume=volume()
-            self.area=area()
-            return 'successful'
+            def main():
+                area()
+                volume()
+                return 'successful'
+            return main()
         except TypeError:
             return 'TypeError'
     def Cube(self):
@@ -146,17 +159,17 @@ class Graphic_computation:
         def area():
             self.s=self.Decimal(str(self.math.pow(self.a,2)*6))
             print('表面积:',self.s)
-            return self.s
         def volume():
             self.v=self.Decimal(str(self.math.pow(self.a,3)))
             print('体积:',self.v)
-            return self.v
         try:
-            self.area=area()
-            self.volume=volume()
-            return 'successful'
+            def main():
+                area()
+                volume()
+                return 'successful'
+            return main()
         except TypeError:
             return 'TypeError'
 if __name__ == '__main__':
-    test=Graphic_computation(bottom_area=314,h=20)
+    test=Graphic_computation(r=8,h=10)
     print(test.Cylinder())
